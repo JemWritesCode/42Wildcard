@@ -14,6 +14,7 @@ import {
   View,
   Text,
   StatusBar,
+  TextInput
 } from 'react-native';
 
 import {
@@ -25,6 +26,16 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 const App = () => {
+  state = {
+    placeName: ""
+  };
+
+  placeNameChangedHandler = val => {
+    this.setState({
+      placeName: val
+    });
+  };
+
   return (
     <Fragment>
       <StatusBar barStyle="dark-content" />
@@ -40,7 +51,14 @@ const App = () => {
           )}
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
+              <Text style={styles.sectionTitle}>I Changed This</Text>
+              <TextInput
+                style={{width: 300, borderColor: "black", borderWidth: 2}}
+                placeholder="An awesome place"
+                value={this.state.placeName}
+                onChangeText={this.placeNameChangedHandler}
+              />
+
               <Text style={styles.sectionDescription}>
                 Edit <Text style={styles.highlight}>App.js</Text> to change this
                 screen and then come back to see your edits.
