@@ -51,7 +51,7 @@ const App = () => {
           )}
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>I Changed This</Text>
+              <Text style={styles.sectionTitle}>Login</Text>
               <TextInput
                 style={{width: 300, borderColor: "black", borderWidth: 2}}
                 placeholder="An awesome place"
