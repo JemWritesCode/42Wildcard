@@ -14,6 +14,7 @@ import {
   View,
   Text,
   StatusBar,
+  TextInput
 } from 'react-native';
 
 import {
@@ -25,6 +26,14 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 const App = () => {
+  state = {
+    placeName: ''
+  }
+
+  placeNameChangedHandler = (event) => {
+    alert(event);
+  }
+
   return (
     <Fragment>
       <StatusBar barStyle="dark-content" />
@@ -40,31 +49,15 @@ const App = () => {
           )}
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
+              <Text style={styles.sectionTitle}>Changed!</Text>
               <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
+                Edit <Text style={styles.highlight}>App.js</Text> Hi this is Jem Changing the Text!
               </Text>
+              <TextInput 
+              style={{width: 300, borderColor: "black", borderWidth: 1}}
+              value={this.state.placeName} 
+              onChangeText={this.placeNameChangedHandler}/>
             </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
           </View>
         </ScrollView>
       </SafeAreaView>
